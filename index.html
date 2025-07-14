@@ -1,147 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Page Sidebar Website</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Webpage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            min-height: 100vh;
-            background-color: #f0f2f5;
-            color: #333;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
 
-        /* Sidebar */
-        .sidebar {
-            width: 220px;
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 30px 20px;
-            position: fixed;
-            height: 100%;
-        }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c3e50;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .sidebar h2 {
-            margin-bottom: 30px;
-            font-size: 24px;
-        }
+    .navbar .logo {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-        .sidebar a {
-            display: block;
-            color: #ecf0f1;
-            text-decoration: none;
-            margin: 15px 0;
-            transition: 0.3s;
-        }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        .sidebar a:hover {
-            color: #1abc9c;
-        }
+    .navbar ul li a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-        /* Main Content */
-        .main {
-            margin-left: 220px;
-            padding: 40px;
-            flex: 1;
-        }
+    .navbar ul li a:hover {
+      color: #1abc9c;
+    }
 
-        section {
-            margin-bottom: 60px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+    /* Hero/Home Section */
+    .hero {
+      background: linear-gradient(to right, #2980b9, #6dd5fa);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
 
-        h1, h2 {
-            color: #2c3e50;
-        }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #1abc9c;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
 
-        .btn:hover {
-            background-color: #16a085;
-        }
+    .btn {
+      padding: 12px 25px;
+      background-color: #1abc9c;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #999;
-            font-size: 14px;
-        }
+    .btn:hover {
+      background-color: #16a085;
+    }
 
-        @media (max-width: 768px) {
-            .sidebar {
-                position: static;
-                width: 100%;
-                height: auto;
-                text-align: center;
-            }
+    /* About Section */
+    .section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
 
-            .main {
-                margin-left: 0;
-                padding: 20px;
-            }
-        }
-    </style>
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="sidebar">
-        <h2>MySite</h2>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#" class="logo">MySite</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="main">
-        <section id="home">
-            <h1>Welcome to My Website</h1>
-            <p>This is a beautiful single-page site with a stylish sidebar and clean layout. It's fully responsive and built with only HTML and CSS.</p>
-            <a href="#contact" class="btn">Get in Touch</a>
-        </section>
+  <!-- Home Section -->
+  <section class="hero" id="home">
+    <h1>Welcome to My Website</h1>
+    <p>Clean design, responsive layout, and a modern look — all with just HTML & CSS.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I’m a web developer with a passion for building elegant, functional websites. This template can be used for portfolios, landing pages, or business sites.</p>
-        </section>
+  <!-- About Section -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>I'm a creative web designer who builds elegant, functional websites. Whether you're looking for a personal site, a portfolio, or a business landing page — this layout is a perfect start.</p>
+  </section>
 
-        <section id="services">
-            <h2>Services</h2>
-            <ul>
-                <li>Web Design</li>
-                <li>Frontend Development</li>
-                <li>Responsive Layouts</li>
-                <li>UI/UX Design</li>
-            </ul>
-        </section>
+  <!-- Services Section -->
+  <section class="section" id="services">
+    <h2>My Services</h2>
+    <p>I offer website design, responsive layouts, frontend development, and user interface optimization tailored to your business goals.</p>
+  </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to email me at <a href="mailto:example@email.com">example@email.com</a>.</p>
-        </section>
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Have a project or question? Reach out via email at <a href="mailto:your@email.com">your@email.com</a>.</p>
+  </section>
 
-        <footer>
-            &copy; 2025 MySite. All rights reserved.
-        </footer>
-    </div>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 MySite. All rights reserved.
+  </footer>
 
 </body>
 </html>
