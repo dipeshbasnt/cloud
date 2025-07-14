@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Sidebar Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 220px;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 30px 20px;
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 15px 0;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #1abc9c;
+        }
+
+        /* Main Content */
+        .main {
+            margin-left: 220px;
+            padding: 40px;
+            flex: 1;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #16a085;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+
+            .main {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>MySite</h2>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="main">
+        <section id="home">
+            <h1>Welcome to My Website</h1>
+            <p>This is a beautiful single-page site with a stylish sidebar and clean layout. It's fully responsive and built with only HTML and CSS.</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I’m a web developer with a passion for building elegant, functional websites. This template can be used for portfolios, landing pages, or business sites.</p>
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <ul>
+                <li>Web Design</li>
+                <li>Frontend Development</li>
+                <li>Responsive Layouts</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to email me at <a href="mailto:example@email.com">example@email.com</a>.</p>
+        </section>
+
+        <footer>
+            &copy; 2025 MySite. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
