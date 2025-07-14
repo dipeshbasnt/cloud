@@ -3,57 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Modern Webpage</title>
+  <title>MyPortfolio - Web Developer</title>
   <style>
+    /* Reset & Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
+      background-color: #fafafa;
       color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #2c3e50;
-      padding: 15px 30px;
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .navbar .logo {
-      color: #fff;
       font-size: 24px;
       font-weight: bold;
-      text-decoration: none;
+      color: #2c3e50;
     }
 
     .navbar ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
 
     .navbar ul li a {
-      color: #ecf0f1;
-      text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: border 0.3s ease;
+      color: #2c3e50;
     }
 
     .navbar ul li a:hover {
-      color: #1abc9c;
+      border-bottom: 2px solid #3498db;
     }
 
-    /* Hero/Home Section */
+    /* Hero Section */
     .hero {
       background: linear-gradient(to right, #2980b9, #6dd5fa);
       color: white;
@@ -62,55 +76,93 @@
     }
 
     .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
+      font-size: 52px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 20px;
+      max-width: 600px;
+      margin: auto;
       margin-bottom: 30px;
     }
 
-    .btn {
+    .btn-primary {
+      background-color: #ffffff;
+      color: #2980b9;
       padding: 12px 25px;
-      background-color: #1abc9c;
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-weight: bold;
       transition: background 0.3s;
     }
 
-    .btn:hover {
-      background-color: #16a085;
+    .btn-primary:hover {
+      background-color: #e0f3ff;
     }
 
-    /* About Section */
-    .section {
-      padding: 60px 20px;
-      max-width: 900px;
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    .section h2 {
+    section h2 {
+      font-size: 32px;
       text-align: center;
       margin-bottom: 20px;
       color: #2c3e50;
     }
 
-    .section p {
+    section p {
       font-size: 18px;
-      line-height: 1.6;
       text-align: center;
+      max-width: 700px;
+      margin: auto;
       color: #555;
+    }
+
+    /* Services Section */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      width: 280px;
+      transition: transform 0.3s;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+      color: #2980b9;
+      margin-bottom: 15px;
+    }
+
+    /* Contact */
+    .contact p a {
+      color: #3498db;
+      font-weight: bold;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #2c3e50;
-      color: #ecf0f1;
+      padding: 30px;
+      background-color: #f0f0f0;
+      font-size: 14px;
+      color: #777;
       margin-top: 40px;
     }
 
@@ -118,15 +170,15 @@
       .navbar ul {
         flex-direction: column;
         gap: 10px;
-        margin-top: 10px;
       }
 
       .hero h1 {
-        font-size: 32px;
+        font-size: 36px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .services {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
@@ -134,44 +186,59 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
-    <a href="#" class="logo">MySite</a>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="navbar">
+      <div class="logo">MyPortfolio</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Home Section -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
-    <h1>Welcome to My Website</h1>
-    <p>Clean design, responsive layout, and a modern look — all with just HTML & CSS.</p>
-    <a href="#contact" class="btn">Get in Touch</a>
+    <h1>Hi, I'm Alex</h1>
+    <p>I design and build responsive, accessible, and beautiful websites with focus on user experience.</p>
+    <a href="#contact" class="btn-primary">Contact Me</a>
   </section>
 
   <!-- About Section -->
-  <section class="section" id="about">
+  <section id="about">
     <h2>About Me</h2>
-    <p>I'm a creative web designer who builds elegant, functional websites. Whether you're looking for a personal site, a portfolio, or a business landing page — this layout is a perfect start.</p>
+    <p>I'm a frontend developer with 3+ years of experience creating intuitive and engaging websites for businesses and individuals. I specialize in HTML, CSS, and UX-focused design.</p>
   </section>
 
   <!-- Services Section -->
-  <section class="section" id="services">
-    <h2>My Services</h2>
-    <p>I offer website design, responsive layouts, frontend development, and user interface optimization tailored to your business goals.</p>
+  <section id="services">
+    <h2>What I Do</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>Modern, clean, and professional designs tailored to your brand and audience.</p>
+      </div>
+      <div class="service-card">
+        <h3>Responsive Layouts</h3>
+        <p>Fully responsive layouts that look great on desktop, tablet, and mobile devices.</p>
+      </div>
+      <div class="service-card">
+        <h3>UI/UX Optimization</h3>
+        <p>Improving user flows and interaction to make your site usable and enjoyable.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section" id="contact">
-    <h2>Contact</h2>
-    <p>Have a project or question? Reach out via email at <a href="mailto:your@email.com">your@email.com</a>.</p>
+  <section id="contact" class="contact">
+    <h2>Let's Connect</h2>
+    <p>Have a project in mind or just want to say hi? Email me at <a href="mailto:alex@example.com">alex@example.com</a>.</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 MySite. All rights reserved.
+    &copy; 2025 MyPortfolio – Built with HTML & CSS. All rights reserved.
   </footer>
 
 </body>
